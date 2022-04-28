@@ -4,11 +4,8 @@ import Time from './Utils/Time.js'
 import Camera from './Camera.js'
 import Renderer from './Renderer.js'
 import World from './World/World.js'
-import Environment from './World/Environment.js'
-import Resources from './Utils/Resources.js'
 import Debug from './Utils/Debug.js'
 import Stats from './Utils/Stats.js'
-import sources from './sources.js'
 
 let instance = null
 
@@ -33,12 +30,10 @@ export default class Experience
         this.time = new Time()
 
         this.scene = new THREE.Scene()
-        this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()  
         
         this.world = new World()
-        this.environment = new Environment()
 
         // Sizes resize event
         this.sizes.on('resize', () => 
